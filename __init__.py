@@ -9,7 +9,7 @@ app = Flask(__name__)
                                                                                                                                        
 @app.route('/')
 def hello_world():
-    return render_template('hello.html') # commentaire
+    return render_template('hello.html') # commentaire2
 
 key = Fernet.generate_key()
 f = Fernet(key)
