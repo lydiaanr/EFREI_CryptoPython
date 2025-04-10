@@ -6,8 +6,13 @@ import sqlite3
 
 app = Flask(__name__)
 
-# Générer une clé de chiffrement (toujours la même pour encryption et décryption)
-key = Fernet.generate_key()
+# Générer une clé de chiffrement une seule fois (et la sauvegarder)
+# Remarque : N'exécutez cette ligne qu'une seule fois pour générer la clé, puis copiez-la dans le code
+# key = Fernet.generate_key()
+# print(key)  # Copiez la clé affichée et remplacez la ligne ci-dessous
+
+# Remplacez cette clé par celle générée une fois
+key = b'votre_clé_fixe'  # Remplacez par la clé générée une seule fois
 f = Fernet(key)
 
 @app.route('/')
@@ -31,4 +36,3 @@ def decryptage(token):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
