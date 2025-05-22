@@ -12,7 +12,7 @@ app = Flask(__name__)
 # print(key)  # Copiez la clé affichée et remplacez la ligne ci-dessous
 
 # Remplacez cette clé par celle générée une fois
-key = b'votre_clé_fixe'  # Remplacez par la clé générée une seule fois
+key = Fernet.generate(key)#b'votre_clé_fixe'  # Remplacez par la clé générée une seule fois
 f = Fernet(key)
 
 @app.route('/')
